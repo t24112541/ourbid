@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: db_ourbid
+    volumes:
+      - ./db/initdb/:/docker-entrypoint-initdb.d
+      - ./db/data/:/var/lib/mysql/
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PW}
+      MYSQL_DATABASE: ${DB_NAME}
+      TZ: "Asia/Bangkok" 
+    ports:
+      - "9908:3306"
+    restart: always
+  web:
+    build: .
+    image: php:7.2.2-apache
+    container_name: ourbid
+    depends_on:
+      - db
+    volumes:
+      - ./ourbid/:/var/www/html/
+    environment:
+      DEV: production
+      MYSQL_HOST: ${DB_HOST}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PW}
+      MYSQL_DATABASE: ${DB_NAME}
+    ports:
+      - "8003:80"
+    stdin_open: true
+    tty: true
+    restart: always
