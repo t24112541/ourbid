@@ -63,9 +63,7 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
           <?php 
-              if(isset($_GET['l_department'])){require_once("./views/l_department.html");}
-              else if(isset($_GET['l_users'])){require_once("./views/l_users.html");}
-              else{require_once("./views/o_bid.html");}
+              require_once("./views/o_bid.html");
           ?>
         </div>
         <!-- /.container-fluid -->

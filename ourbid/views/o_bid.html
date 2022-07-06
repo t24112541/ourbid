@@ -17,56 +17,66 @@
                 </tr>
                 <tr>
                     <td width="10%" style="font-weight: bold;">เรียน</td>
-                    <td width="40%">นาย ก</td>
+                    <td width="40%"><input type="text" class="form-control" name="c_manager" id="c_manager"></td>
                     <td width="10%" style="font-weight: bold;">เลขที่ เอ็นที</td>
-                    <td width="40%">ขบภน.1.2(ชภ.)/พิเศษ</td>
+                    <td width="40%"><input type="text" class="form-control" name="b_code" id="b_code"></td>
                 </tr>
                 <tr>
                     <td width="10%" style="font-weight: bold;">หน่วยงาน</td>
-                    <td width="40%">บริษัท นาย ก</td>
+                    <td width="40%"><input type="text" class="form-control" name="c_name" id="c_name"></td>
                     <td width="10%" style="font-weight: bold;">วันที่</td>
-                    <td width="40%">6  มิถุนายน  2564</td>
+                    <td width="40%"><input id="start_date" type="text" class="form-control" placeholder="วันที่ออกหนังสือ"></td>
                 </tr>
                 <tr>
                     <td width="10%" style="font-weight: bold;">ติดต่อ</td>
-                    <td width="40%">นาย ก</td>
+                    <td width="40%"><input type="text" class="form-control" name="c_tel" id="c_tel"></td>
                     <td width="10%" style="font-weight: bold;">พนักงานขาย</td>
-                    <td width="40%">นาย ข</td>
+                    <td width="40%"><input type="text" class="form-control" name="e_id" id="e_id"></td>
                 </tr>
                 <tr>
                     <td width="10%" style="font-weight: bold;">โทรศัพท์</td>
-                    <td width="40%">0000000000</td>
+                    <td width="40%"><input type="text" class="form-control" name="c_phone" id="c_phone"></td>
                     <td width="10%" style="font-weight: bold;">โทรศัพท์</td>
-                    <td width="40%">1111111111</td>
+                    <td width="40%"><input type="text" class="form-control" name="e_tel" id="e_tel"></td>
                 </tr>
                 <tr>
                     <td width="10%" style="font-weight: bold;">E-mail</td>
-                    <td width="40%"> </td>
+                    <td width="40%"><input type="email" class="form-control" name="c_email" id="c_email"></td>
                     <td width="10%" style="font-weight: bold;">โทรสาร</td>
-                    <td width="40%">0 4482 1559, 0 4405 6919</td>
+                    <td width="40%"><input type="text" class="form-control" name="e_fax" id="e_fax"></td>
                 </tr>
                 <tr>
                     <td width="10%" style="font-weight: bold;">รูปแบบบริการ</td>
                     <td width="40%">บริการ Fiber2U</td>
                     <td width="10%" style="font-weight: bold;">E-mail</td>
-                    <td width="40%">abc@mail.com</td>
+                    <td width="40%"><input type="text" class="form-control" name="e_email" id="e_email"></td>
                 </tr>
                 <tr>
                     <td colspan="6">
-                        <table border="1" style="width:100%">
+                        <table border="1" style="width:100%" id="lst_product">
                             <tr>
                                 <td align="center" width="10%" rowspan="2">ลำดับ</td>
-                                <td align="center" width="30%" rowspan="2">รายการ</td>
-                                <td align="center" width="30%" colspan="3">"ค่าติดตั้ง / ค่าดำเนินการ (บาท) ชำระแรกเข้าครั้งเดียว"</td>
-                                <td align="center" width="30%" colspan="3">ค่าบริการรายเดือน</td>
+                                <td align="center" width="20%" rowspan="2">บริการ</td>
+								<td align="center" width="20%" rowspan="2">รายการ</td>
+								
+                                <td align="center" width="20%" colspan="3">ค่าบริการ</td>
+								<td align="center" width="10%" rowspan="2">รูปแบบการชำระ</td>
+								<td rowspan="2"></td>
                             </tr>
                             <tr>
-                                <td align="center">จำนวน</td>
+								<td align="center">จำนวน</td>
                                 <td align="center">ต่อหน่วย</td>
                                 <td align="center">รวม</td>
-                                <td align="center">จำนวน</td>
-                                <td align="center">ต่อหน่วย</td>
-                                <td align="center">รวม</td>
+                            </tr>
+							<tr>
+                                <td align="center"><input type="text" placeholder="ลำดับที่" style="width: 100%;"></td>
+                                <td align="center"><input type="text" placeholder="บริการ" style="width: 100%;"></td>
+								<td align="center"><input type="text" placeholder="รายการ" style="width: 100%;"></td>
+                                <td align="center"><input type="text" placeholder="" style="width: 100%;"></td>
+                                <td align="center"><input type="text" placeholder="" style="width: 100%;"></td>
+                                <td align="center"><input type="text" placeholder="" style="width: 100%;"></td>
+								<td align="center" width="5%"><input type="text" placeholder="" style="width: 100%;"></td>
+								<td align="center" width="5%"><button class="btn btn-light" onclick="dup()">+</button></td>
                             </tr>
                         </table>
                     </td>
@@ -77,260 +87,30 @@
     </div>
 </div>
 
-<div class="modal fade" id="modal_l_department" >
-    <div class="modal-dialog modal-lg" >
-        <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header" id="head_stage">
-                <h4 class="modal-title">แผนก</h4>
-                <button type="button" onclick="clear_input()" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <!-- Modal body -->
-            <form id="frm_l_department" enctype="multipart/form-data">
-                <div class="modal-body">
-
-                    <div class="col-md-12 mb-12">
-                        <label class="cv_keep-left" for="d_name">แผนก <span style="color:red">*</span></label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" ><i class="fas fa-tags"></i></span>
-                            </div>
-                            <input type="hidden" name="frm_mode" id="frm_mode">
-                            <input type="text" class="form-control" id="d_name" name="d_name" oninvalid="this.setCustomValidity('แผนก')"required oninput="this.setCustomValidity('')" placeholder="แผนก">
-                        </div>
-                    </div>
-                    <div class="col-md-12 mb-12">
-                        <label class="cv_keep-left" for="d_name">เพิ่มเติม</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" ><i class="fas fa-tags"></i></span>
-                            </div>
-                            <div id="hidden"></div>
-                            <textarea class="form-control" rows="5" id="d_des" name="d_des"></textarea>                        
-                        </div>
-                    </div>
-                    <div id="frm"></div>
-                    <div id="msg"></div>
-                </div>
-            
-                <!-- Modal footer -->
-                <div class="modal-footer col-sm-12" id="modal_l_department_foot">	
-                    <div id="mng"></div>
-                </div>
-            </form>
-        </div>
-
-    </div>
-</div>
-
+<link href="./css/datepicker.css" rel="stylesheet">
+<script type="text/javascript" src="./js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="./js/bootstrap-datepicker-thai.js"></script>
+<script type="text/javascript" src="./js/locales/bootstrap-datepicker.th.js"></script>
 <script type="text/javascript">
-	var data;
-	var tmp_page=1;
-	var tmp_filter='';
 	// -------------------------- onload ---------------------------//
-	var link_page=link+"/l_department.php";
-	open_add();
-	load_l_department('',tmp_page);
+	
 	$("title").text(title());
 
 	// ------------------------- function -------------------------//
-	$(document).on('keypress',function(e) {
-	    if(e.which == 13) {
-	        if($("#frm_mode").val()==2){
-	    		update();
-	    	}else{
-	    		add();
-	    	}
-	    }
-	});
-	function func_search(){
-		load_l_department($("#txt_search").val(),1);
+	function dup(){
+		let tr=`
+							<tr>
+								<td align="center"><input type="text" placeholder="ลำดับที่" style="width: 100%;"></td>
+                                <td align="center"><input type="text" placeholder="บริการ" style="width: 100%;"></td>
+								<td align="center"><input type="text" placeholder="รายการ" style="width: 100%;"></td>
+                                <td align="center"><input type="text" placeholder="" style="width: 100%;"></td>
+                                <td align="center"><input type="text" placeholder="" style="width: 100%;"></td>
+                                <td align="center"><input type="text" placeholder="" style="width: 100%;"></td>
+								<td align="center" width="5%"><input type="text" placeholder="" style="width: 100%;"></td>
+								<td align="center" width="5%"><button class="btn btn-light" onclick="dup()">+</button></td>
+							</tr>
+		`;
+		$('#lst_product tr:last').after(tr);
 	}
-	$( "#frm_search" ).submit(function( event ) {
-	  func_search();
-	  event.preventDefault();
-	});
-	function open_add(){
-        $("#frm_mode").val(1);
-		clear_input();
-		let txt=`<button id="btn_save" onclick="add()" type="button" class="btn btn-success" data-dismiss=""><i class="fas fa-save fa-1x"></i> บันทึก</button>`;
-		$("#mng").html(txt);
-	}
-	function sh_data(d_id,d_name,d_des){
-        $("#frm_mode").val(2);
-		clear_input();
-		let txt='';
-		
-			txt=`<button id="btn_del" data-dismiss="modal" data-toggle="modal" data-target="#del_modal" type="button" class="btn btn-danger" data-dismiss=""><i class="fas fa-trash-alt fa-1x"></i> ลบ</button>
-			<button id="btn_save" onclick="update()" type="button" class="btn btn-success" data-dismiss=""><i class="fas fa-save fa-1x"></i> บันทึก</button>`;
-		
-		
-		let hiden=`<input type="hidden" name="d_id" id="d_id" value="${d_id}">`;
-		$("#hidden").html(hiden);
-		$("#d_name").val(d_name);
-        $("#d_des").val(d_des);
-		$("#modal_l_department").modal('toggle');
-		$("#mng").html(txt);
-	}
-	function clear_input(){
-		$("#hidden").html('');
-		$("#d_name").val('');
-        $("#d_des").val('');
-		$("#frm_l_department").removeClass("was-validated");
-	}
-	function add(){
-		$("#msg").html("");
-		let sta=0;
-		if($("#d_name").val()==""){sta++;}
-		if(sta!=0){$("#frm_l_department").addClass("was-validated");return false;}
-		else{
-			let f_data=new FormData();
-			let data = $("#frm_l_department").serializeArray();
-			$.each(data,(key,val)=>{
-				f_data.append(val.name,val.value);
-			});
-			f_data.append("l_department_add",true);
-			event.preventDefault();
-			$.ajax({
-				type: "POST",
-	 			url:link_page,
-	 			data: f_data,
-				contentType: false,
-				processData: false,
-			}).done((res)=> {
-				let data=JSON.parse(res);
-				if(data.status){
-					$("#modal_l_department").modal('toggle');
-					load_l_department('',tmp_page);
-					clear_input();
-				}else{
-					$("#msg").html("<div style='color:#bd4646'>"+data.msg+"</div>");
-				}	 				
-	 		});
-		}
-	}	
-	function update(){
-			$("#msg").html("");
-			let f_data=new FormData();
-			let data = $("#frm_l_department").serializeArray();
-			$.each(data,(key,val)=>{
-				f_data.append(val.name,val.value);
-			});
-			f_data.append("l_department_update",true);
-			event.preventDefault();
-
-				$.ajax({
-					type: "POST",
-		 			url:link_page,
-		 			data: f_data,
-					contentType: false,
-					processData: false,
-				}).done((res)=> {
-					let data=JSON.parse(res);
-					if(data.status){
-						$("#modal_l_department").modal('toggle');
-						load_l_department(tmp_filter,tmp_page);
-						clear_input();
-					}else{
-						$("#msg").html("<div style='color:#bd4646'>"+data.msg+"</div>");
-					}
-				});	
-	}	
-	function del(){
-			$("#msg").html("");
-			$.ajax({
-				type:"POST",
-				url:link_page,
-				data:{
-					"d_id":$("#d_id").val(),
-					"l_department_del":true
-				}
-			}).done((res)=>{
-				let data=JSON.parse(res);
-				if(data.status){
-					// $("#modal_l_department").modal('toggle');
-					load_l_department(tmp_filter,tmp_page);
-					clear_input();
-				}else{
-					$("#msg").html("<div style='color:#bd4646'>"+data.msg+"</div>");
-				}
-
-			});
-	}
-	function load_l_department(filter,page){
-			let txt;
-			tmp_filter=filter;
-			$("#loading").show();
-			$.ajax({
-				type:"POST",
-				url:link_page,
-				data:{
-					"load_l_department":true,
-					"filter":filter,
-					"page":page
-				}
-			}).done((res)=>{
-				var data=JSON.parse(res);
-				console.log(data);
-				if(!data.msg){
-					$.each(data,(i, item)=>{
-						let css=`style="background-color:#e0e9e5;color:#000"`;
-						let row=(page==1?parseInt(i)+1:(parseInt(i)+1)+(page-1)*10);
-						let limit_word="";
-						for(i=0;i<25;i++){
-							if(i>=item.d_name.length){break;}
-							limit_word+=item.d_name[i];
-							if(i==24){limit_word+="...";}
-						}
-						txt+=`<tr ${css}>
-					        <td>${row}</td>
-					        <td>${limit_word} </td>
-					        <td><button style="color:#fff" type="button" onclick="sh_data('${item.d_id }','${item.d_name}','${item.d_des}')" class="btn">
-				        		<i  class="fas fa-book-open fa-2x"></i>
-				        	</button>`;
-					});
-				}else{
-					txt=`<tr><td colspan='3'>no data</td></tr>`;
-				}
-				$("#loading").hide();
-				$("#l_department_content").html(txt);
-				set_pagination(filter,page);
-			});
-	}
-	function set_pagination(filter,page){
-		let start_page;
-		let end_page;
-		$("#pagination").empty();
-		$.ajax({
-				type:"POST",
-				url:link_page,
-				data:{
-					"set_pagination_l_department":true,
-					"filter":filter
-				}
-			}).done((res)=>{
-				var data=JSON.parse(res);
-				tmp_page=(page==="pagi_first"?1:(page=="pagi_last"?data:page));
-				if(tmp_page>5){
-					start_page=tmp_page-4;
-					end_page=tmp_page+5;
-				}else{
-					start_page=1;
-					end_page=10;
-				}
-				$("#pagination").append(`<li class="page-item " id="pagi_first"><a class="page-link" onclick="load_l_department('${tmp_filter}',1)"><i class="fas fa-fast-backward"></i></a></li>`);
-				for(let i=start_page;i<=data;i++){
-					if(i<=end_page){
-						$("#pagination").append(`<li class="page-item" id="pagi_${i}"><a class="page-link" onclick="load_l_department('${tmp_filter}',${i})">${i}</a></li>`);
-						if(i==page){
-							let active_page=`#pagi_${page}`;
-							$(active_page).addClass("active");
-						}
-					}
-				}
-				$("#pagination").append(`<li class="page-item " id="pagi_last"><a class="page-link" onclick="load_l_department('${tmp_filter}',${data})"><i class="fas fa-fast-forward"></i></a></li>`);
-			});	
-	}
-	
 </script>
 
